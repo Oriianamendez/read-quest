@@ -23,17 +23,17 @@ export function BookCards({
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>
-          <strong>Author: </strong>
+          <strong>Author </strong>
           {author}
         </p>
         <p className="pt-2 pb-2">{description}</p>
         <div className="card-actions justify-end">
           <p>
-            <strong>Pages: </strong>
+            <strong>Pages </strong>
             {pages}
           </p>
           <p>
-            <strong>Points: </strong>
+            <strong>Points </strong>
             {points}
           </p>
         </div>

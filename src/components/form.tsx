@@ -7,10 +7,6 @@ export function Form() {
   return (
     <form action="" className="flex flex-col items-center">
       <Label
-        placeholder={"Type the book name"}
-        information={charlotteWebBook.name}
-      />
-      <Label
         placeholder={"Type the answer"}
         information={questionsCharlotteWeb.Question1}
       />
@@ -22,7 +18,7 @@ export function Form() {
         placeholder={"Type the answer"}
         information={questionsCharlotteWeb.Question3}
       />
-      <CTAButton />
+      <CTAButton name={"Get your points"} />
     </form>
   );
 }

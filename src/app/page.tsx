@@ -1,15 +1,11 @@
 import { Description } from "@/components/description";
+import { TopNavPage } from "@/components/top-nav";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <header>
-        <nav>
-          <p>Logo</p>
-          <p>Login</p>
-        </nav>
-      </header>
+      <TopNavPage />
       <main className="">
         <Description />
         <article>

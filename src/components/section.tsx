@@ -1,4 +1,10 @@
-export function Label({ information }: { information: string }) {
+export function Label({
+  information,
+  placeholder,
+}: {
+  information: string;
+  placeholder: string;
+}) {
   return (
     <section className="form-control w-full max-w-xs">
       <label className="label">
@@ -6,7 +12,7 @@ export function Label({ information }: { information: string }) {
       </label>
       <input
         type="text"
-        placeholder="Type here"
+        placeholder={placeholder}
         className="input input-bordered w-full max-w-xs"
       />
     </section>

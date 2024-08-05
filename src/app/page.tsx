@@ -5,6 +5,7 @@ import {
 } from "@/components/books";
 import { BookCards } from "@/components/cards";
 import { Description } from "@/components/description";
+import { ModalForm } from "@/components/modal";
 import { TopNavPage } from "@/components/top-nav";
 
 export default function Home() {
@@ -18,17 +19,9 @@ export default function Home() {
           <BookCards {...theMagicTreeHouseBook} />
           <BookCards {...theBfgBook} />
         </div>
-        <form action="">
-          <label>Book</label>
-          <input type="text" />
-          <label htmlFor="">Question</label>
-          <input type="text" />
-          <label htmlFor="">Question</label>
-          <input type="text" />
-          <label htmlFor="">Question</label>
-          <input type="text" />
-          <button>Get your points</button>
-        </form>
+        <div className="flex flex-col items-center">
+          <ModalForm />
+        </div>
       </main>
     </>
   );

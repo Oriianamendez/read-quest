@@ -6,15 +6,15 @@ import {
 import { CTAButton, DeleteButton } from "@/components/buttons";
 import { BookCards } from "@/components/cards";
 import { Description } from "@/components/description";
-import { Form } from "@/components/form";
+import { ModalForm } from "@/components/modal";
 import { TopNavPage } from "@/components/top-nav";
 
 export default function DesignSystemPage() {
   return (
-    <>
+    <div className="contents">
       <TopNavPage />
       <Description />
-      <CTAButton />
+      <CTAButton name={"Get your points"} />
       <DeleteButton />
       <div className="flex gap-4 p-4 justify-center">
         <BookCards {...charlotteWebBook} />
@@ -24,7 +24,9 @@ export default function DesignSystemPage() {
       <p>
         Font: <strong>Roboto</strong>
       </p>
-      <Form />
-    </>
+      <div className="flex flex-col items-center">
+        <ModalForm />
+      </div>
+    </div>
   );
 }

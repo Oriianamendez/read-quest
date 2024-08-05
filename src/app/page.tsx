@@ -1,3 +1,4 @@
+import { Description } from "@/components/description";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,9 +10,8 @@ export default function Home() {
           <p>Login</p>
         </nav>
       </header>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1>Welcome to ReadQuest</h1>
-        <p>This is a description for ReadQuest</p>
+      <main className="">
+        <Description />
         <article>
           <section>
             <h2>Book name</h2>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Description() {
   return (
-    <div className="hero bg-base-200 min-h-screen  p-8">
+    <div className="hero bg-base-200 p-10">
       <div className="hero-content flex-col lg:flex-row">
         <Image
           width={300}

@@ -7,5 +7,5 @@ export function CTAButton() {
 }
 
 export function DeleteButton() {
-  return <button className="btn btn-error">Error</button>;
+  return <button className="btn btn-error">Delete</button>;
 }

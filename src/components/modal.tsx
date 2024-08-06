@@ -6,7 +6,7 @@ import { Label } from "./section";
 
 export function ModalForm() {
   return (
-    <>
+    <main className="md:flex md:flex-col md:items-center">
       <Label placeholder={"Type the book title"} information={"Book title"} />
       <CTAButton
         name={"Get your questions"}
@@ -26,6 +26,6 @@ export function ModalForm() {
           <Form />
         </div>
       </dialog>
-    </>
+    </main>
   );
 }

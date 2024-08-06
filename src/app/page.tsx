@@ -1,28 +1,25 @@
 import {
+  Description,
+  Main,
+  BookCards,
+  ModalForm,
   charlotteWebBook,
   theBfgBook,
   theMagicTreeHouseBook,
-} from "@/components/books";
-import { BookCards } from "@/components/cards";
-import { Description } from "@/components/description";
-import { ModalForm } from "@/components/modal";
-import { TopNavPage } from "@/components/top-nav";
+} from "@/components";
 
 export default function Home() {
   return (
-    <>
-      <TopNavPage />
-      <main className="">
+    <div className="content">
+      <Main>
         <Description />
-        <div className="flex gap-4 p-4 pt-8 justify-center">
+        <main className="md:flex md:gap-4 md:p-4 md:pt-8 justify-center">
           <BookCards {...charlotteWebBook} />
           <BookCards {...theMagicTreeHouseBook} />
           <BookCards {...theBfgBook} />
-        </div>
-        <div className="flex flex-col items-center">
-          <ModalForm />
-        </div>
-      </main>
-    </>
+        </main>
+        <ModalForm />
+      </Main>
+    </div>
   );
 }

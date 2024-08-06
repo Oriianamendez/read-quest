@@ -16,18 +16,18 @@ export function BookCards({
   points: number;
 }) {
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
+    <article className="card bg-base-100 w-96 shadow-xl gap-4 ">
       <figure>
-        <Image width={150} height={150} src={image} alt="Shoes" />
+        <Image width={150} height={250} src={image} alt="Shoes" />
       </figure>
-      <div className="card-body">
+      <section className="card-body">
         <h2 className="card-title">{name}</h2>
         <p>
           <strong>Author </strong>
           {author}
         </p>
         <p className="pt-2 pb-2">{description}</p>
-        <div className="card-actions justify-end">
+        <footer className="card-actions justify-end">
           <p>
             <strong>Pages </strong>
             {pages}
@@ -36,8 +36,8 @@ export function BookCards({
             <strong>Points </strong>
             {points}
           </p>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+    </article>
   );
 }

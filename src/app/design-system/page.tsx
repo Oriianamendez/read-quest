@@ -1,6 +1,6 @@
 import {
   ModalForm,
-  Description,
+  Header,
   BookCards,
   CTAButton,
   DeleteButton,
@@ -8,12 +8,14 @@ import {
   theBfgBook,
   theMagicTreeHouseBook,
   Main,
+  Description,
 } from "@/components";
 
 export default function DesignSystemPage() {
   return (
     <div className="contents">
       <Main>
+        <Header />
         <Description />
         <CTAButton name={"Get your points"} />
         <DeleteButton />

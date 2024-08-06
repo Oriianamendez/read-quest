@@ -1,31 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export function TopNavPage() {
+export function TopNav() {
   return (
     <header>
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <a className="btn btn-ghost text-xl">ReadQuest</a>
-        </div>
-        <div className="flex-none gap-2">
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost btn-circle avatar"
-            >
-              <div className="w-10 rounded-full">
-                <Image
-                  src="/login-icon.png"
-                  width={40}
-                  height={40}
-                  alt="Login icon"
-                />
-              </div>
+      <nav className="navbar bg-base-100 ">
+        <div className="flex-1 justify-between">
+          <Link href={"/"} className="btn btn-ghost text-xl">
+            <Image src="/logo.png" width={50} height={50} alt="Logo" />
+          </Link>
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar items-center"
+          >
+            <div className="w-10 rounded-full">
+              <Image
+                src="/login-icon.png"
+                width={45}
+                height={45}
+                alt="Login icon"
+              />
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

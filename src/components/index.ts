@@ -2,6 +2,7 @@ export * from "./layouts";
 export * from "./books";
 export * from "./buttons";
 export * from "./cards";
+export * from "./header";
 export * from "./description";
 export * from "./form";
 export * from "./modal";

@@ -10,6 +10,7 @@ export function Description() {
           src="/kid-reading.jpg"
           className="max-w-sm rounded-lg shadow-2xl"
           alt="A child reading with different books around"
+          priority
         />
         <div className="p-4">
           <h1 className="text-5xl font-bold">Welcome to ReadQuest!</h1>

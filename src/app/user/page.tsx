@@ -1,13 +1,10 @@
-export function User() {
+export default function Page() {
   return (
     <>
-      <nav>
-        <p>Here goes the TopNav</p>
-      </nav>
       <div>
         <header>
           <h1>Welcome User!</h1>
-          <p>Slogan</p>
+          <p>Track and treasure your reading adventures</p>
         </header>
         <div>
           <p>Points</p>

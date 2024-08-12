@@ -1,4 +1,4 @@
-import { Checkbox, CTAButton } from "@/components";
+import { Checkbox, CTAButton, Main } from "@/components";
 import Image from "next/image";
 
 export function BookCards({
@@ -64,34 +64,36 @@ export function BookRead({
   points: number;
 }) {
   return (
-    <article className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 pt-6 mb-4">
-      <figure>
-        <Image
-          width={100}
-          height={150}
-          src={image}
-          className="rounded-md"
-          alt="An image of a book"
-          style={{ width: "130px", height: "180px" }}
-        />
-      </figure>
-      <section className="card-body">
-        <h2 className="card-title text-3xl text-slate-900">{name}</h2>
-        <p>{author}</p>
-        <footer className="card-actions flex justify-between">
-          <div className="flex flex-col">
-            <p>
-              Pages
-              <strong className="text-slate-900 text-lg"> {pages}</strong>
-            </p>
-            <p>
-              Points
-              <strong className="text-slate-900 text-lg"> {points}</strong>
-            </p>
-          </div>
-          <Checkbox />
-        </footer>
-      </section>
-    </article>
+    <Main>
+      <article className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 pt-6 mb-4 mt-8">
+        <figure>
+          <Image
+            width={100}
+            height={150}
+            src={image}
+            className="rounded-md"
+            alt="An image of a book"
+            style={{ width: "130px", height: "180px" }}
+          />
+        </figure>
+        <section className="card-body">
+          <h2 className="card-title text-3xl text-slate-900">{name}</h2>
+          <p>{author}</p>
+          <footer className="card-actions flex justify-between">
+            <div className="flex flex-col">
+              <p>
+                Pages
+                <strong className="text-slate-900 text-lg"> {pages}</strong>
+              </p>
+              <p>
+                Points
+                <strong className="text-slate-900 text-lg"> {points}</strong>
+              </p>
+            </div>
+            <Checkbox />
+          </footer>
+        </section>
+      </article>
+    </Main>
   );
 }

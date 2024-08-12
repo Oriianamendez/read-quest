@@ -1,31 +1,33 @@
 "use client";
 
+import { handleQuestion } from "@/db/queries";
+import { books } from "./books";
 import { CTAButton } from "./buttons";
 import { Form } from "./form";
 
 export function ModalForm() {
+  const showQuestions = () => {
+    (document.getElementById("my_modal_3") as HTMLDialogElement)?.showModal();
+  };
+
   return (
     <main className="md:flex md:flex-col md:items-center pb-20">
-      <select className="select select-warning w-full max-w-xs">
-        <option disabled selected>
-          Select your book
-        </option>
-        <option>Book 1</option>
-        <option>Book 2</option>
-        <option>Book 3</option>
-        <option>Book 4</option>
-      </select>
-
-      <div>
-        <CTAButton
-          name={"Get your questions"}
-          onClick={() =>
-            (
-              document.getElementById("my_modal_3") as HTMLDialogElement
-            )?.showModal()
-          }
-        />
-      </div>
+      <form action={handleQuestion}>
+        <select className="select select-warning w-full max-w-xs">
+          <option disabled selected>
+            Select your book
+          </option>
+          <option>{books.charlotteWebBook.name}</option>
+          <option>{books.theMagicTreeHouseBook.name}</option>
+          <option>{books.theBfgBook.name}</option>
+        </select>
+        <div>
+          <CTAButton
+            name={"Get your questions"}
+            onClick={() => showQuestions()}
+          />
+        </div>
+      </form>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form method="dialog">

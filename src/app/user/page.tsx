@@ -1,4 +1,4 @@
-import { ModalForm } from "@/components";
+import { BookRead, ModalForm } from "@/components";
 
 export default function Page() {
   return (
@@ -15,7 +15,13 @@ export default function Page() {
         <main>
           <p>Image?</p>
           <ModalForm />
-          <p>Cards of books read</p>
+          <BookRead
+            name={"name"}
+            author={"author"}
+            pages={123}
+            image={""}
+            points={3}
+          />
         </main>
       </div>
     </>

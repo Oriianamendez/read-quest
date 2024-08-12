@@ -11,6 +11,7 @@ export const books = pgTable("books", {
   id: uuid("id").notNull().primaryKey().defaultRandom(),
   name: text("name").notNull(),
   author: text("author").notNull(),
+  description: text("description").notNull(),
   pages: integer("pages").notNull(),
   points: integer("points").notNull(),
   age: integer("age").notNull(),

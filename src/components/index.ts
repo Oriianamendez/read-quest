@@ -9,3 +9,4 @@ export * from "./modal";
 export * from "./questionary";
 export * from "./section";
 export * from "./top-nav";
+export * from "./checkbox";

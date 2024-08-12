@@ -5,7 +5,7 @@ import { Form } from "./form";
 
 export function ModalForm() {
   return (
-    <main className="md:flex md:flex-col md:items-center pb-6">
+    <main className="md:flex md:flex-col md:items-center pb-20">
       <select className="select select-warning w-full max-w-xs">
         <option disabled selected>
           Select your book

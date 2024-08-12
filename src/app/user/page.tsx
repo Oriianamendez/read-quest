@@ -1,3 +1,5 @@
+import { ModalForm } from "@/components";
+
 export default function Page() {
   return (
     <>
@@ -12,7 +14,7 @@ export default function Page() {
         </div>
         <main>
           <p>Image?</p>
-          <p>Modal</p>
+          <ModalForm />
           <p>Cards of books read</p>
         </main>
       </div>

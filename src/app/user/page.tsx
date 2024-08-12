@@ -1,29 +1,28 @@
-import { BookRead, ModalForm } from "@/components";
+import { BookRead, HeaderForUser, ModalForm } from "@/components";
+import Image from "next/image";
 
 export default function Page() {
   return (
     <>
-      <div>
+      <div className="flex justify-between pt-24">
         <header>
-          <h1>Welcome User!</h1>
-          <p>Track and treasure your reading adventures</p>
+          <HeaderForUser />
         </header>
-        <div>
+        <div className="pr-32 py-6 md:text-xl text-xl font-semibold text-center">
           <p>Points</p>
           <p>Books</p>
         </div>
-        <main>
-          <p>Image?</p>
-          <ModalForm />
-          <BookRead
-            name={"name"}
-            author={"author"}
-            pages={123}
-            image={""}
-            points={3}
-          />
-        </main>
       </div>
+      <main>
+        <ModalForm />
+        <BookRead
+          name={"name"}
+          author={"author"}
+          pages={123}
+          image={""}
+          points={3}
+        />
+      </main>
     </>
   );
 }

@@ -2,13 +2,21 @@
 
 import { CTAButton } from "./buttons";
 import { Form } from "./form";
-import { Label } from "./section";
 
 export function ModalForm() {
   return (
     <main className="md:flex md:flex-col md:items-center pb-6">
-      <Label placeholder={"Type the book title"} information={"Book title"} />
-      <div className="pt-4">
+      <select className="select select-warning w-full max-w-xs">
+        <option disabled selected>
+          Select your book
+        </option>
+        <option>Book 1</option>
+        <option>Book 2</option>
+        <option>Book 3</option>
+        <option>Book 4</option>
+      </select>
+
+      <div>
         <CTAButton
           name={"Get your questions"}
           onClick={() =>

@@ -89,6 +89,7 @@ export function BookRead({
               <strong className="text-slate-900 text-lg"> {points}</strong>
             </p>
           </div>
+          <Checkbox />
         </footer>
       </section>
     </article>

@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function Description() {
   return (
-    <div className="hero bg-yellow-200 p-10">
-      <div className="hero-content flex-col lg:flex-row text-black">
+    <div className="hero bg-yellow-100 p-10">
+      <div className="hero-content flex-col md:flex-row text-black">
         <Image
           width={300}
           height={300}

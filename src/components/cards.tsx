@@ -1,3 +1,4 @@
+import { CTAButton } from "@/components";
 import Image from "next/image";
 
 export function BookCards({
@@ -16,26 +17,33 @@ export function BookCards({
   points: number;
 }) {
   return (
-    <article className="card bg-base-100 w-96 shadow-xl gap-4 ">
+    <article className="card bg-purple-300 text-slate-600 w-96 shadow-xl gap-4 pt-10 mb-4">
       <figure>
-        <Image width={150} height={250} src={image} alt="Shoes" />
+        <Image
+          width={200}
+          height={280}
+          src={image}
+          className="rounded-md"
+          alt="An image of a book"
+          style={{ width: "200px", height: "280px" }}
+        />
       </figure>
       <section className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>
-          <strong>Author </strong>
-          {author}
-        </p>
-        <p className="pt-2 pb-2">{description}</p>
-        <footer className="card-actions justify-end">
-          <p>
-            <strong>Pages </strong>
-            {pages}
-          </p>
-          <p>
-            <strong>Points </strong>
-            {points}
-          </p>
+        <h2 className="card-title text-3xl text-slate-900">{name}</h2>
+        <p>{author}</p>
+        <p className="pt-2 pb-2 text-lg text-justify">{description}</p>
+        <footer className="card-actions flex justify-between">
+          <div className="flex flex-col">
+            <p>
+              Pages
+              <strong className="text-slate-900 text-lg"> {pages}</strong>
+            </p>
+            <p>
+              Points
+              <strong className="text-slate-900 text-lg"> {points}</strong>
+            </p>
+          </div>
+          <CTAButton name={"Read"} />
         </footer>
       </section>
     </article>

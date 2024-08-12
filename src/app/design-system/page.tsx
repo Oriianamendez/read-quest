@@ -17,8 +17,7 @@ export default function DesignSystemPage() {
       <Main>
         <Header />
         <Description />
-        <CTAButton name={"Get your points"} />
-        <DeleteButton />
+
         <div className="flex gap-4 p-4 justify-center">
           <BookCards {...charlotteWebBook} />
           <BookCards {...theMagicTreeHouseBook} />
@@ -27,6 +26,8 @@ export default function DesignSystemPage() {
         <p>
           Font: <strong>Roboto</strong>
         </p>
+        <CTAButton name={"Get your points"} />
+        <DeleteButton />
         <div className="flex flex-col items-center">
           <ModalForm />
         </div>

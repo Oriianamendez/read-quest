@@ -18,7 +18,9 @@ export function Form() {
         placeholder={"Type the answer"}
         information={questionsCharlotteWeb.Question3}
       />
-      <CTAButton name={"Get your points"} />
+      <footer>
+        <CTAButton name={"Get your points"} />
+      </footer>
     </form>
   );
 }

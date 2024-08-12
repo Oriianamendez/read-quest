@@ -7,7 +7,7 @@ export function CTAButton({
 }) {
   return (
     <button
-      className="btn bg-yellow-300 hover:bg-yellow-200 mt-2"
+      className="btn bg-yellow-300 hover:bg-yellow-200 border-yellow-300 mt-2 font-medium text-lg"
       onClick={onClick}
     >
       {name}

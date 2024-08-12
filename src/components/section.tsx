@@ -6,9 +6,9 @@ export function Label({
   placeholder: string;
 }) {
   return (
-    <section className="form-control w-full max-w-xs">
+    <section className="form-control w-full max-w-xs pb-6">
       <label className="label">
-        <span className="label-text text-base">{information}</span>
+        <span className="label-text text-lg">{information}</span>
       </label>
       <input
         type="text"

@@ -16,7 +16,6 @@ export function ModalForm() {
   }, []);
 
   const showQuestions = () => {
-    "use client";
     (document.getElementById("my_modal_3") as HTMLDialogElement)?.showModal();
   };
 

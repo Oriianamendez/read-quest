@@ -2,7 +2,6 @@ import {
   Header,
   Main,
   BookCards,
-  ModalForm,
   charlotteWebBook,
   theBfgBook,
   theMagicTreeHouseBook,

@@ -12,7 +12,6 @@ export function ModalForm() {
   useEffect(() => {
     getBooks().then((data) => {
       setBooks(data);
-      console.log({ data });
     });
   }, []);
 

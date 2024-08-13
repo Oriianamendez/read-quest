@@ -8,7 +8,6 @@ export function Form({ bookId }: { bookId: string }) {
   useEffect(() => {
     getQuestions(bookId).then((data) => {
       setQuestions(data);
-      console.log({ data });
     });
   }, [bookId]);
 

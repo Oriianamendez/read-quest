@@ -4,7 +4,7 @@ export * from "./buttons";
 export * from "./cards";
 export * from "./header";
 export * from "./description";
-export * from "./form";
+// export * from "./form";
 export * from "./modal";
 export * from "./questionary";
 export * from "./section";

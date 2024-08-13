@@ -2,7 +2,7 @@
 
 import { eq } from "drizzle-orm";
 import { db } from "./index";
-import { books, questions } from "./schema";
+import { books, kidAnswers, questions } from "./schema";
 
 export const getQuestions = async (bookId: string) =>
   await db.query.questions.findMany({
@@ -10,3 +10,17 @@ export const getQuestions = async (bookId: string) =>
   });
 
 export const getBooks = async () => await db.query.books.findMany();
+
+export const saveAnswers = async (answer: string, questionId: string) => {
+  await db.insert(kidAnswers).values({
+    answer,
+    question_id: questionId,
+    kid_id: "35895cdb-96ee-4828-8ef4-7e3ceb5a3048",
+  });
+};
+
+export const handleAnswers = async (formData: FormData) => {
+  formData.forEach((answer, questionId) => {
+    saveAnswers(answer as string, questionId);
+  });
+};

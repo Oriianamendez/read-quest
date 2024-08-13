@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Label, CTAButton } from "@/components";
-import { getQuestions } from "@/db/queries";
+import { getQuestions, handleAnswers, saveAnswers } from "@/db/queries";
 
 export function Form({ bookId }: { bookId: string }) {
   const [questions, setQuestions] = useState<any[]>([]);
@@ -12,13 +12,14 @@ export function Form({ bookId }: { bookId: string }) {
   }, [bookId]);
 
   return (
-    <form action="" className="flex flex-col items-center">
+    <form action={handleAnswers} className="flex flex-col items-center">
       {questions.map((question: any) => {
         return (
           <Label
             key={question.id}
             placeholder={"Type the answer"}
             information={question.questions}
+            name={question.id}
           />
         );
       })}

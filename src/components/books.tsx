@@ -6,7 +6,7 @@ import {
 
 export const books = {
   charlotteWebBook: {
-    name: "Charlotte's Web",
+    name: "Charlotte`s Web",
     author: "E.B. White",
     description:
       "Charlotte's Web is a heartwarming tale of friendship and loyalty. It follows the story of a pig named Wilbur and his spider friend, Charlotte, who works to save him from being slaughtered by writing messages in her web.",

@@ -1,5 +1,6 @@
+"use client";
+
 import { BookRead, HeaderForUser, ModalForm } from "@/components";
-import Image from "next/image";
 
 export default function Page() {
   return (

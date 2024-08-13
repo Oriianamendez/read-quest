@@ -54,28 +54,16 @@ export function BookRead({
   name,
   author,
   pages,
-  image,
   points,
 }: {
   name: string;
   author: string;
   pages: number;
-  image: string;
   points: number;
 }) {
   return (
     <Main>
       <article className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 pt-6 mb-4 mt-8">
-        <figure>
-          <Image
-            width={100}
-            height={150}
-            src={image}
-            className="rounded-md"
-            alt="An image of a book"
-            style={{ width: "130px", height: "180px" }}
-          />
-        </figure>
         <section className="card-body">
           <h2 className="card-title text-3xl text-slate-900">{name}</h2>
           <p>{author}</p>

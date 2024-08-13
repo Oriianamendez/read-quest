@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { Label, CTAButton } from "@/components";
 import { getQuestions } from "@/db/queries";
 
-export function Form() {
-  const [questions, setQuestions] = useState<any>([]);
+export function Form({ bookId }: { bookId: string }) {
+  const [questions, setQuestions] = useState<any[]>([]);
 
   useEffect(() => {
-    getQuestions("d1abbe98-c6a3-4dab-841b-e59ae8e7dfdc").then((data) => {
+    getQuestions(bookId).then((data) => {
       setQuestions(data);
       console.log({ data });
     });
-  }, []);
+  }, [bookId]);
 
   return (
     <form action="" className="flex flex-col items-center">

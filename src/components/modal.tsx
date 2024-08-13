@@ -1,13 +1,20 @@
 "use client";
 
-import { getQuestions } from "@/db/queries";
-import { books } from "./books";
+import { getBooks, getQuestions } from "@/db/queries";
 import { CTAButton } from "./buttons";
 import { Form } from "./form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function ModalForm() {
-  const [book, setBook] = useState("");
+  const [bookId, setBookId] = useState<any>(null);
+  const [books, setBooks] = useState<any[]>([]);
+
+  useEffect(() => {
+    getBooks().then((data) => {
+      setBooks(data);
+      console.log({ data });
+    });
+  }, []);
 
   const showQuestions = () => {
     "use client";
@@ -18,23 +25,21 @@ export function ModalForm() {
     <main className="md:flex md:flex-col md:items-center pb-20">
       <select
         className="select select-warning w-full max-w-xs"
-        onChange={(e) => setBook(e.currentTarget.value)}
-        value={book}
+        onChange={(e) => setBookId(e.currentTarget.value)}
       >
-        <option value={"Select your book"}>Select your book</option>
-        <option value={books.charlotteWebBook.name}>
-          {books.charlotteWebBook.name}
-        </option>
-        <option value={books.theMagicTreeHouseBook.name}>
-          {books.theMagicTreeHouseBook.name}
-        </option>
-        <option value={books.theBfgBook.name}>{books.theBfgBook.name}</option>
+        {books.map((book: any) => {
+          return (
+            <option key={book.id} value={book.id}>
+              {book.name}
+            </option>
+          );
+        })}
       </select>
       <div>
         <CTAButton
           name={"Get your questions"}
-          onClick={async () => {
-            await getQuestions(book), showQuestions();
+          onClick={() => {
+            showQuestions();
           }}
         />
       </div>
@@ -46,7 +51,7 @@ export function ModalForm() {
               ✕
             </button>
           </form>
-          <Form />
+          {bookId && <Form bookId={bookId} />}
         </div>
       </dialog>
     </main>

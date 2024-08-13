@@ -16,13 +16,7 @@ export default function Page() {
       </div>
       <main>
         <ModalForm />
-        <BookRead
-          name={"name"}
-          author={"author"}
-          pages={123}
-          image={""}
-          points={3}
-        />
+        <BookRead name={"name"} author={"author"} pages={123} points={3} />
       </main>
     </>
   );

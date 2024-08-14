@@ -30,11 +30,7 @@ export function NewBookModal() {
 
 function NewBookForm() {
   return (
-    <form
-      action={handleNewBooks}
-      className="flex flex-col items-center"
-      method="dialog"
-    >
+    <form action={handleNewBooks} className="flex flex-col items-center">
       <Label placeholder="Book title" information="Title" name="name" />
       <Label placeholder="Book author" information="Author" name="author" />
       <Label
@@ -46,7 +42,7 @@ function NewBookForm() {
       <Label placeholder="Points" information="Points" name="points" />
       <Label placeholder="From which age" information="Age" name="age" />
       <footer className="mt-4">
-        <CTAButton name={"Get your points"} />
+        <CTAButton name={"Add new book"} />
       </footer>
     </form>
   );

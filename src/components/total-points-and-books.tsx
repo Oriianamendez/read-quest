@@ -11,9 +11,7 @@ export function TotalPointsAndBooks() {
     showTotalBooksRead().then((result) => {
       setData(result[0].value);
     });
-  }, []);
 
-  useEffect(() => {
     getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048").then((result) => {
       const totalBooks = result.map((bookRead) => {
         return bookRead.book.points;

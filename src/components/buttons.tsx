@@ -7,7 +7,7 @@ export function CTAButton({
 }) {
   return (
     <button
-      className="btn bg-yellow-300 hover:bg-yellow-200 border-yellow-300 mt-4 font-medium text-lg"
+      className="btn bg-yellow-300 hover:bg-yellow-200 border-yellow-300 font-medium text-lg"
       onClick={onClick}
     >
       {name}
@@ -16,5 +16,9 @@ export function CTAButton({
 }
 
 export function DeleteButton() {
-  return <button className="btn btn-error">Delete</button>;
+  return <button className="btn btn-error font-medium text-lg">Delete</button>;
+}
+
+export function CloseButton() {
+  return <button className="btn btn-error font-medium text-lg">Close</button>;
 }

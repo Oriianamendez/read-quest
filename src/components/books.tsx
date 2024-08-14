@@ -1,9 +1,3 @@
-import {
-  questionsBFG,
-  questionsCharlotteWeb,
-  questionsMagicTreeHouse,
-} from "./questionary";
-
 export const charlotteWebBook = {
   name: "Charlotte`s Web",
   author: "E.B. White",
@@ -12,7 +6,6 @@ export const charlotteWebBook = {
   pages: 192,
   image: "/charlotte-web.jpg",
   points: 4,
-  questions: { questionsCharlotteWeb },
 };
 
 export const theMagicTreeHouseBook = {
@@ -23,7 +16,6 @@ export const theMagicTreeHouseBook = {
   pages: 80,
   image: "/magic-tree-house.jpg",
   points: 2,
-  questions: { questionsMagicTreeHouse },
 };
 
 export const theBfgBook = {
@@ -34,5 +26,4 @@ export const theBfgBook = {
   pages: 224,
   image: "/bfg.jpg",
   points: 5,
-  questions: { questionsBFG },
 };

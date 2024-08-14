@@ -9,7 +9,9 @@ export const getQuestions = async (bookId: string) =>
     where: eq(questions.book_id, bookId),
   });
 
-export const getBooks = async () => await db.query.books.findMany();
+export const getBooks = async () => {
+  return await db.query.books.findMany();
+};
 
 export const getBookRead = async (kidId: string) => {
   return await db.query.bookRead.findMany({

@@ -1,8 +1,8 @@
 "use server";
 
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { db } from "./index";
-import { books, kidAnswers, questions } from "./schema";
+import { bookRead, books, kidAnswers, questions } from "./schema";
 
 export const getQuestions = async (bookId: string) =>
   await db.query.questions.findMany({
@@ -10,6 +10,21 @@ export const getQuestions = async (bookId: string) =>
   });
 
 export const getBooks = async () => await db.query.books.findMany();
+
+export const getBookbyId = async (bookId: string) => {
+  await db.query.books.findMany({
+    where: and(eq(books.id, bookId), eq(books.read, true)),
+  });
+};
+
+export const getBookRead = async (kidId: string) => {
+  return await db.query.bookRead.findMany({
+    with: {
+      book: true,
+    },
+    where: eq(bookRead.kid_id, kidId),
+  });
+};
 
 export const saveAnswers = async (answer: string, questionId: string) => {
   await db.insert(kidAnswers).values({
@@ -19,10 +34,18 @@ export const saveAnswers = async (answer: string, questionId: string) => {
   });
 };
 
+export const saveBookRead = async (bookId: string) => {
+  await db.insert(bookRead).values({
+    book_id: bookId,
+    kid_id: "35895cdb-96ee-4828-8ef4-7e3ceb5a3048",
+  });
+};
+
 export const handleAnswers = async (formData: FormData) => {
   formData.forEach((answer, questionId) => {
     saveAnswers(answer as string, questionId);
   });
+  await saveBookRead(formData.get("book_id") as string);
 };
 
 export type NewBooks = typeof books.$inferInsert;

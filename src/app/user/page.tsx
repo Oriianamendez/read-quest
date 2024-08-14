@@ -22,7 +22,7 @@ export default function Page() {
       </div>
       <main>
         <QuestionsModalForm />
-        <BookRead name={"name"} author={"author"} pages={123} points={3} />
+        <BookRead />
       </main>
     </>
   );

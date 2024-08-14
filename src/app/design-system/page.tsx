@@ -11,6 +11,7 @@ import {
   Description,
   TopNav,
   TopNavUser,
+  BookRead,
 } from "@/components";
 
 export default function DesignSystemPage() {
@@ -34,6 +35,7 @@ export default function DesignSystemPage() {
         <DeleteButton />
         <div className="flex flex-col items-center">
           <QuestionsModalForm />
+          <BookRead />
         </div>
       </Main>
     </div>

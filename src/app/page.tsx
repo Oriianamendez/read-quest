@@ -11,7 +11,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="content">
+    <div className="content bg-yellow-100">
       <TopNav />
       <Main>
         <Header />

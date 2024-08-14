@@ -44,6 +44,6 @@ export const handleNewBooks = async (formData: FormData) => {
   try {
     await saveNewBooks(newBook);
   } catch (error) {
-    return new Error("Message not sent");
+    return new Error("The book could not be saved");
   }
 };

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewBookModal } from "./new-book-modal";
+import { Suspense } from "react";
+import { TotalPointsAndBooks } from "./total-points-and-books";
 
 export function TopNav() {
   return (
@@ -38,6 +40,9 @@ export function TopNavUser() {
           <Link href={"/"} className="btn btn-ghost text-xl">
             <Image src="/logo.png" width={45} height={45} alt="Logo" />
           </Link>
+          <Suspense fallback={<p className="text-black">Loading points...</p>}>
+            <TotalPointsAndBooks />
+          </Suspense>
           <div tabIndex={0} role="button" className="flex items-center ">
             <div className="">
               <NewBookModal />

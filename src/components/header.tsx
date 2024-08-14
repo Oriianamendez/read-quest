@@ -28,7 +28,7 @@ export function Header() {
 
 export function HeaderForUser() {
   return (
-    <div className="hero pb-20">
+    <div className="hero">
       <div className="hero-content flex flex-col lg:flex-row text-black ">
         <div className="p-4 text-center">
           <h1 className="md:text-7xl text-5xl font-bold">Welcome User!</h1>

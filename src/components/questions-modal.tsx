@@ -20,7 +20,7 @@ export function QuestionsModalForm() {
   };
 
   return (
-    <main className="md:flex md:flex-col md:items-center pb-20">
+    <main className="md:flex md:flex-col items-center pt-10">
       <select
         className="select select-warning w-full max-w-xs"
         onChange={(e) => setBookId(e.currentTarget.value)}

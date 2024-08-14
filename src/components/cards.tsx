@@ -60,7 +60,6 @@ export function BookRead() {
   useEffect(() => {
     getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048").then((data) => {
       setBooksRead(data);
-      console.log(data);
     });
   }, []);
 

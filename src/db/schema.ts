@@ -15,6 +15,7 @@ export const books = pgTable("books", {
   pages: integer("pages").notNull(),
   points: integer("points").notNull(),
   age: integer("age").notNull(),
+  read: boolean("read").notNull().default(false),
 });
 
 export const questions = pgTable("questions", {

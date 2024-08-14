@@ -7,6 +7,7 @@ import {
   TopNavUser,
 } from "@/components";
 import { TotalPointsAndBooks } from "@/components";
+import { Suspense } from "react";
 
 export default function Page() {
   return (
@@ -16,10 +17,14 @@ export default function Page() {
         <header>
           <HeaderForUser />
         </header>
-        <TotalPointsAndBooks />
+        <Suspense fallback={<p className="text-black">Loading points...</p>}>
+          <TotalPointsAndBooks />
+        </Suspense>
       </div>
       <main>
-        <QuestionsModalForm />
+        <Suspense fallback={<p className="text-black">Loading books...</p>}>
+          <QuestionsModalForm />
+        </Suspense>
         <BookRead />
       </main>
     </>

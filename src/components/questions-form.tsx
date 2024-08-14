@@ -23,8 +23,8 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
           />
         );
       })}
-      <footer className="mt-4">
-        <CTAButton name={"Get your points"} />
+      <footer className="mt-4 flex place-self-end pr-20">
+        <CTAButton name={"Send"} />
       </footer>
     </form>
   );

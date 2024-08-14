@@ -1,7 +1,7 @@
 "use client";
 
 import { Checkbox, CTAButton, Main } from "@/components";
-import { getBookbyId, getBookRead } from "@/db/queries";
+import { getBookRead } from "@/db/queries";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

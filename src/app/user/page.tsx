@@ -1,10 +1,11 @@
 "use client";
 
-import { BookRead, HeaderForUser, ModalForm } from "@/components";
+import { BookRead, HeaderForUser, ModalForm, TopNavUser } from "@/components";
 
 export default function Page() {
   return (
     <>
+      <TopNavUser />
       <div className="flex justify-between pt-24">
         <header>
           <HeaderForUser />

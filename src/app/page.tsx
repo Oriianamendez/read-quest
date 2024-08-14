@@ -6,11 +6,13 @@ import {
   theBfgBook,
   theMagicTreeHouseBook,
   Description,
+  TopNav,
 } from "@/components";
 
 export default function Home() {
   return (
     <div className="content">
+      <TopNav />
       <Main>
         <Header />
         <Description />

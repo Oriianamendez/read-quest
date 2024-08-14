@@ -1,6 +1,6 @@
 "use client";
 
-import { getBooks, getQuestions } from "@/db/queries";
+import { getBooks } from "@/db/queries";
 import { CTAButton } from "./buttons";
 import { QuestionsForm } from "./questions-form";
 import { useEffect, useState } from "react";

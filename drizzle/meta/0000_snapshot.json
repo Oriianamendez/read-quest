@@ -1,9 +1,65 @@
 {
-  "id": "d545607c-0702-4d38-853d-8849b2720d1e",
+  "id": "a64fe877-55a0-47c3-aa69-7da1442ecd86",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.book_read": {
+      "name": "book_read",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "book_id": {
+          "name": "book_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kid_id": {
+          "name": "kid_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "book_read_book_id_books_id_fk": {
+          "name": "book_read_book_id_books_id_fk",
+          "tableFrom": "book_read",
+          "tableTo": "books",
+          "columnsFrom": [
+            "book_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "book_read_kid_id_kids_id_fk": {
+          "name": "book_read_kid_id_kids_id_fk",
+          "tableFrom": "book_read",
+          "tableTo": "kids",
+          "columnsFrom": [
+            "kid_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "public.books": {
       "name": "books",
       "schema": "",
@@ -27,6 +83,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "description": {
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
         "pages": {
           "name": "pages",
           "type": "integer",
@@ -44,6 +106,13 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true
+        },
+        "read": {
+          "name": "read",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
         }
       },
       "indexes": {},

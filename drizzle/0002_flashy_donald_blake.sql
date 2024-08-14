@@ -1,1 +1,0 @@
-ALTER TABLE "books" ADD COLUMN "read" boolean DEFAULT false NOT NULL;

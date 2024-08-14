@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import {
   pgTable,
   uuid,
@@ -17,6 +18,27 @@ export const books = pgTable("books", {
   age: integer("age").notNull(),
   read: boolean("read").notNull().default(false),
 });
+
+export const bookRead = pgTable("book_read", {
+  id: uuid("id").notNull().primaryKey().defaultRandom(),
+  book_id: uuid("book_id")
+    .notNull()
+    .references(() => books.id),
+  kid_id: uuid("kid_id")
+    .notNull()
+    .references(() => kids.id),
+});
+
+export const relationsBookReadBooks = relations(books, ({ many }) => ({
+  books: many(bookRead),
+}));
+
+export const relationsBooksBookRead = relations(bookRead, ({ one }) => ({
+  book: one(books, {
+    fields: [bookRead.book_id],
+    references: [books.id],
+  }),
+}));
 
 export const questions = pgTable("questions", {
   id: uuid("id").notNull().primaryKey().defaultRandom(),

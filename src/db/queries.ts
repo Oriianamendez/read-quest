@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq } from "drizzle-orm";
+import { and, count, eq } from "drizzle-orm";
 import { db } from "./index";
 import { bookRead, books, kidAnswers, questions } from "./schema";
 
@@ -69,4 +69,15 @@ export const handleNewBooks = async (formData: FormData) => {
   } catch (error) {
     return new Error("The book could not be saved");
   }
+};
+
+export const getTotalBooksRead = async (kidId: string) => {
+  return await db
+    .select({ value: count() })
+    .from(bookRead)
+    .where(eq(bookRead.kid_id, kidId));
+};
+
+export const showTotalBooksRead = async () => {
+  return await getTotalBooksRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048");
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Label, CTAButton } from "@/components";
-import { getQuestions, handleAnswers, saveAnswers } from "@/db/queries";
+import { getQuestions, handleAnswers } from "@/db/queries";
 
 export function QuestionsForm({ bookId }: { bookId: string }) {
   const [questions, setQuestions] = useState<any[]>([]);
@@ -13,6 +13,7 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
 
   return (
     <form action={handleAnswers} className="flex flex-col items-center">
+      <input type="text" hidden name="book_id" defaultValue={bookId} />
       {questions.map((question: any) => {
         return (
           <Label

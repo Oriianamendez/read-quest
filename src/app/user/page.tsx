@@ -6,6 +6,7 @@ import {
   QuestionsModalForm,
   TopNavUser,
 } from "@/components";
+import { TotalPointsAndBooks } from "@/components";
 
 export default function Page() {
   return (
@@ -15,10 +16,7 @@ export default function Page() {
         <header>
           <HeaderForUser />
         </header>
-        <div className="pr-32 py-6 md:text-xl text-xl font-semibold text-center">
-          <p>Points</p>
-          <p>Books</p>
-        </div>
+        <TotalPointsAndBooks />
       </div>
       <main>
         <QuestionsModalForm />

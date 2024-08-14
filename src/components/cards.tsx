@@ -1,5 +1,9 @@
+"use client";
+
 import { Checkbox, CTAButton, Main } from "@/components";
+import { getBookbyId, getBookRead } from "@/db/queries";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export function BookCards({
   name,
@@ -50,38 +54,51 @@ export function BookCards({
   );
 }
 
-export function BookRead({
-  name,
-  author,
-  pages,
-  points,
-}: {
-  name: string;
-  author: string;
-  pages: number;
-  points: number;
-}) {
+export function BookRead() {
+  const [booksRead, setBooksRead] = useState<any>([]);
+
+  useEffect(() => {
+    getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048").then((data) => {
+      setBooksRead(data);
+      console.log(data);
+    });
+  }, []);
+
   return (
-    <Main>
-      <article className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 pt-6 mb-4 mt-8">
-        <section className="card-body">
-          <h2 className="card-title text-3xl text-slate-900">{name}</h2>
-          <p>{author}</p>
-          <footer className="card-actions flex justify-between">
-            <div className="flex flex-col">
-              <p>
-                Pages
-                <strong className="text-slate-900 text-lg"> {pages}</strong>
-              </p>
-              <p>
-                Points
-                <strong className="text-slate-900 text-lg"> {points}</strong>
-              </p>
-            </div>
-            <Checkbox />
-          </footer>
-        </section>
-      </article>
-    </Main>
+    <main className="flex gap-4 items-center bg-yellow-100">
+      {booksRead &&
+        booksRead.map((bookRead: any) => {
+          return (
+            <article
+              className="card bg-purple-300 text-slate-600 w-80 h-72 shadow-xl gap-2 mb-4 mt-8 mx-4"
+              key={bookRead.id}
+            >
+              <section className="card-body">
+                <h2 className="card-title text-3xl text-slate-900">
+                  {bookRead.book.name}
+                </h2>
+                <p>{bookRead.book.author}</p>
+                <footer className="card-actions flex justify-between">
+                  <div className="flex flex-col">
+                    <p>
+                      {"Pages "}
+                      <strong className="text-slate-900 text-lg">
+                        {bookRead.book.pages}
+                      </strong>
+                    </p>
+                    <p>
+                      {"Points "}
+                      <strong className="text-slate-900 text-lg">
+                        {bookRead.book.points}
+                      </strong>
+                    </p>
+                  </div>
+                  <Checkbox />
+                </footer>
+              </section>
+            </article>
+          );
+        })}
+    </main>
   );
 }

@@ -5,10 +5,9 @@ import { drizzle } from "drizzle-orm/postgres-js";
 
 config({ path: ".env" });
 
-const dbUrl = process.env.DB_URL;
-
+const dbUrl = process.env.POSTGRES_URL;
 if (!dbUrl) {
-  throw new Error("DB_URL not set");
+  throw new Error("POSTGRES_URL not set");
 }
 
 export const client = postgres(dbUrl);

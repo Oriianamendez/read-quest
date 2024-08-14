@@ -2,10 +2,10 @@
 
 import { getBooks, getQuestions } from "@/db/queries";
 import { CTAButton } from "./buttons";
-import { Form } from "./form";
+import { QuestionsForm } from "./questions-form";
 import { useEffect, useState } from "react";
 
-export function ModalForm() {
+export function QuestionsModalForm() {
   const [bookId, setBookId] = useState<any>(null);
   const [books, setBooks] = useState<any[]>([]);
 
@@ -33,7 +33,7 @@ export function ModalForm() {
           );
         })}
       </select>
-      <div>
+      <div className="mt-4">
         <CTAButton
           name={"Get your questions"}
           onClick={() => {
@@ -49,7 +49,7 @@ export function ModalForm() {
               ✕
             </button>
           </form>
-          {bookId && <Form bookId={bookId} />}
+          {bookId && <QuestionsForm bookId={bookId} />}
         </div>
       </dialog>
     </main>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Label, CTAButton } from "@/components";
 import { getQuestions, handleAnswers, saveAnswers } from "@/db/queries";
 
-export function Form({ bookId }: { bookId: string }) {
+export function QuestionsForm({ bookId }: { bookId: string }) {
   const [questions, setQuestions] = useState<any[]>([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function Form({ bookId }: { bookId: string }) {
           />
         );
       })}
-      <footer>
+      <footer className="mt-4">
         <CTAButton name={"Get your points"} />
       </footer>
     </form>

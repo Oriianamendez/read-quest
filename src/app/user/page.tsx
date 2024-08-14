@@ -1,6 +1,11 @@
 "use client";
 
-import { BookRead, HeaderForUser, ModalForm, TopNavUser } from "@/components";
+import {
+  BookRead,
+  HeaderForUser,
+  QuestionsModalForm,
+  TopNavUser,
+} from "@/components";
 
 export default function Page() {
   return (
@@ -16,7 +21,7 @@ export default function Page() {
         </div>
       </div>
       <main>
-        <ModalForm />
+        <QuestionsModalForm />
         <BookRead name={"name"} author={"author"} pages={123} points={3} />
       </main>
     </>

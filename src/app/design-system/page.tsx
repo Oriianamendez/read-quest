@@ -1,5 +1,5 @@
 import {
-  ModalForm,
+  QuestionsModalForm,
   Header,
   BookCards,
   CTAButton,
@@ -9,11 +9,15 @@ import {
   theMagicTreeHouseBook,
   Main,
   Description,
+  TopNav,
+  TopNavUser,
 } from "@/components";
 
 export default function DesignSystemPage() {
   return (
     <div className="contents">
+      <TopNav />
+      <TopNavUser />
       <Main>
         <Header />
         <Description />
@@ -29,7 +33,7 @@ export default function DesignSystemPage() {
         <CTAButton name={"Get your points"} />
         <DeleteButton />
         <div className="flex flex-col items-center">
-          <ModalForm />
+          <QuestionsModalForm />
         </div>
       </Main>
     </div>

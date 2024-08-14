@@ -1,11 +1,10 @@
 import { handleNewBooks } from "@/db/queries";
-import { CloseButton, CTAButton } from "./buttons";
+import { CTAButton } from "./buttons";
 import { Label } from "./section";
 
 export function NewBookModal() {
   return (
     <>
-      {/* You can open the modal using document.getElementById('ID').showModal() method */}
       <CTAButton
         name={"New Book"}
         onClick={() =>
@@ -29,8 +28,19 @@ export function NewBookModal() {
 }
 
 function NewBookForm() {
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const form = event.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const success = await handleNewBooks(formData);
+    if (success) {
+      (document.getElementById("my_modal_4") as HTMLDialogElement)?.close();
+    }
+  };
+
   return (
-    <form action={handleNewBooks} className="flex flex-col items-center">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center">
       <Label placeholder="Book title" information="Title" name="name" />
       <Label placeholder="Book author" information="Author" name="author" />
       <Label

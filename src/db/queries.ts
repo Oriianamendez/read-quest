@@ -38,10 +38,16 @@ export const saveBookRead = async (bookId: string) => {
 };
 
 export const handleAnswers = async (formData: FormData) => {
-  formData.forEach((answer, questionId) => {
-    saveAnswers(answer as string, questionId);
-  });
-  await saveBookRead(formData.get("book_id") as string);
+  try {
+    formData.forEach((answer, questionId) => {
+      saveAnswers(answer as string, questionId);
+    });
+    await saveBookRead(formData.get("book_id") as string);
+    return true;
+  } catch (error) {
+    new Error("The answers could not be saved");
+    return false;
+  }
 };
 
 export type NewBooks = typeof books.$inferInsert;
@@ -62,8 +68,10 @@ export const handleNewBooks = async (formData: FormData) => {
 
   try {
     await saveNewBooks(newBook);
+    return true;
   } catch (error) {
-    return new Error("The book could not be saved");
+    new Error("The book could not be saved");
+    return false;
   }
 };
 

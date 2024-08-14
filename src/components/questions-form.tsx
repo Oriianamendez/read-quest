@@ -11,8 +11,20 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
     });
   }, [bookId]);
 
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const form = event.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const success = await handleAnswers(formData);
+    if (success) {
+      // Close the modal
+      (document.getElementById("my_modal_3") as HTMLDialogElement)?.close();
+    }
+  };
+
   return (
-    <form action={handleAnswers} className="flex flex-col items-center">
+    <form onSubmit={handleSubmit} className="flex flex-col items-center">
       <input type="text" hidden name="book_id" defaultValue={bookId} />
       {questions.map((question: any) => {
         return (

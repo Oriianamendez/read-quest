@@ -19,9 +19,7 @@ export default function Page() {
             <HeaderForUser />
           </header>
           <main>
-            <Suspense fallback={<p className="text-black">Loading books...</p>}>
-              <QuestionsModalForm />
-            </Suspense>
+            <QuestionsModalForm />
           </main>
         </div>
         <Image
@@ -30,6 +28,7 @@ export default function Page() {
           src="/boy-reading-book.png"
           className="rounded-lg pr-24"
           alt="A boy reading a book"
+          priority
         />
       </div>
       <BookRead />

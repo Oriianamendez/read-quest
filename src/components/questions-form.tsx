@@ -46,7 +46,7 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
         );
       })}
       <footer className="mt-4 flex place-self-end pr-20">
-        <CTAButton name={"Send"} />
+        <CTAButton name={"Send answers"} />
       </footer>
       {questionsSent && (
         <div className="toast toast-bottom">

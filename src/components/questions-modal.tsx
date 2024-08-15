@@ -25,7 +25,7 @@ export function QuestionsModalForm() {
         className="select select-warning w-full max-w-xs"
         onChange={(e) => setBookId(e.currentTarget.value)}
       >
-        <option value="Select your book">Select you book</option>
+        <option value="Select your book">Select your book</option>
         {books.map((book: any) => {
           return (
             <option key={book.id} value={book.id}>
@@ -36,13 +36,15 @@ export function QuestionsModalForm() {
       </select>
       <div className="mt-4">
         <CTAButton
-          name={"Get your questions"}
+          name={"Store your book!"}
           onClick={() => {
             showQuestions();
           }}
         />
       </div>
-
+      <div className="pt-10 text-7xl flex flex-col items-center text-yellow-300">
+        <p>⇩</p>
+      </div>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form method="dialog">

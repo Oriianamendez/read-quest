@@ -5,15 +5,8 @@ import { CTAButton } from "./buttons";
 import { QuestionsForm } from "./questions-form";
 import { useEffect, useState } from "react";
 
-export function QuestionsModalForm() {
+export function QuestionsModalForm({ books }: { books: any }) {
   const [bookId, setBookId] = useState<any>(null);
-  const [books, setBooks] = useState<any[]>([]);
-
-  useEffect(() => {
-    getBooks().then((data) => {
-      setBooks(data);
-    });
-  }, []);
 
   const showQuestions = () => {
     (document.getElementById("my_modal_3") as HTMLDialogElement)?.showModal();

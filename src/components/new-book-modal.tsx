@@ -5,7 +5,7 @@ import { CTAButton } from "./buttons";
 import { Label } from "./section";
 import { useState } from "react";
 
-export function NewBookModal() {
+export function NewBookModal({ updateBooks }: { updateBooks: any }) {
   return (
     <>
       <CTAButton
@@ -23,14 +23,14 @@ export function NewBookModal() {
               ✕
             </button>
           </form>
-          <NewBookForm />
+          <NewBookForm updateBooks={updateBooks} />
         </div>
       </dialog>
     </>
   );
 }
 
-function NewBookForm() {
+function NewBookForm({ updateBooks }: { updateBooks: any }) {
   const [bookSent, setBookSent] = useState(false);
   const [onError, setOnError] = useState(false);
 
@@ -39,16 +39,16 @@ function NewBookForm() {
     const form = event.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
 
-    const success = await handleNewBooks(formData);
-    if (success) {
+    const result = await handleNewBooks(formData);
+    if (result.success) {
       setBookSent(true);
+      updateBooks(result.book);
       setTimeout(
         () =>
           (document.getElementById("my_modal_4") as HTMLDialogElement)?.close(),
         2000
       );
-    }
-    if (!success) {
+    } else {
       setOnError(true);
     }
   };

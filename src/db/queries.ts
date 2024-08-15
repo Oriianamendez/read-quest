@@ -40,7 +40,7 @@ export const saveBookRead = async (bookId: string) => {
 export type NewBooks = typeof books.$inferInsert;
 
 export const saveNewBooks = async (newBook: NewBooks) => {
-  await db.insert(books).values(newBook);
+  return await db.insert(books).values(newBook).returning();
 };
 
 export const getTotalBooksRead = async (kidId: string) => {

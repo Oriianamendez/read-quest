@@ -46,12 +46,11 @@ export const handleNewBooks = async (formData: FormData) => {
   };
 
   try {
-    await saveNewBooks(newBook);
-    revalidatePath("/user");
-    return true;
+    const [book] = await saveNewBooks(newBook);
+    return { book, success: true };
   } catch (error) {
     new Error("The book could not be saved");
-    return false;
+    return { success: false };
   }
 };
 

@@ -32,7 +32,7 @@ export function TopNav() {
   );
 }
 
-export function TopNavUser() {
+export function TopNavUser({ updateBooks }: { updateBooks: any }) {
   return (
     <header>
       <nav className="navbar">
@@ -42,7 +42,7 @@ export function TopNavUser() {
           </Link>
           <div tabIndex={0} role="button" className="flex items-center ">
             <div>
-              <NewBookModal />
+              <NewBookModal updateBooks={updateBooks} />
             </div>
           </div>
         </div>

@@ -1,9 +1,7 @@
 "use client";
 
-import { Checkbox, CTAButton, Main, TotalPointsAndBooks } from "@/components";
-import { getBookRead } from "@/db/queries";
+import { Checkbox, CTAButton, TotalPointsAndBooks } from "@/components";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export function BookCards({
   name,

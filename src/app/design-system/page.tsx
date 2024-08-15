@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  QuestionsModalForm,
   Header,
   BookCards,
   CTAButton,
@@ -12,8 +11,6 @@ import {
   Main,
   Description,
   TopNav,
-  TopNavUser,
-  BookRead,
 } from "@/components";
 
 export default function DesignSystemPage() {

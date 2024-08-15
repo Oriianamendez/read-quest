@@ -1,6 +1,6 @@
 "use server";
 
-import { count, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "./index";
 import { bookRead, books, kidAnswers, questions } from "./schema";
 

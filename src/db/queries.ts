@@ -1,6 +1,6 @@
 "use server";
 
-import { and, count, eq } from "drizzle-orm";
+import { count, eq } from "drizzle-orm";
 import { db } from "./index";
 import { bookRead, books, kidAnswers, questions } from "./schema";
 
@@ -37,43 +37,10 @@ export const saveBookRead = async (bookId: string) => {
   });
 };
 
-export const handleAnswers = async (formData: FormData) => {
-  try {
-    formData.forEach(async (answer, questionId) => {
-      if (questionId === "book_id_hidden") return;
-      await saveAnswers(answer as string, questionId);
-    });
-    await saveBookRead(formData.get("book_id_hidden") as string);
-    return true;
-  } catch (error) {
-    new Error("The answers could not be saved");
-    return false;
-  }
-};
-
 export type NewBooks = typeof books.$inferInsert;
 
 export const saveNewBooks = async (newBook: NewBooks) => {
   await db.insert(books).values(newBook);
-};
-
-export const handleNewBooks = async (formData: FormData) => {
-  const newBook: NewBooks = {
-    name: formData.get("name") as string,
-    author: formData.get("author") as string,
-    description: formData.get("description") as string,
-    pages: Number(formData.get("pages")),
-    points: Number(formData.get("points")),
-    age: Number(formData.get("age")),
-  };
-
-  try {
-    await saveNewBooks(newBook);
-    return true;
-  } catch (error) {
-    new Error("The book could not be saved");
-    return false;
-  }
 };
 
 export const getTotalBooksRead = async (kidId: string) => {
@@ -81,8 +48,4 @@ export const getTotalBooksRead = async (kidId: string) => {
     .select({ value: count() })
     .from(bookRead)
     .where(eq(bookRead.kid_id, kidId));
-};
-
-export const showTotalBooksRead = async () => {
-  return await getTotalBooksRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048");
 };

@@ -64,14 +64,14 @@ export function BookRead() {
   }, []);
 
   return (
-    <main className="flex flex-col items-center bg-yellow-100">
+    <main className="flex flex-col items-center bg-yellow-300">
       <TotalPointsAndBooks />
       <div className="flex flex-wrap justify-center gap-4 items-center">
         {booksRead &&
           booksRead.map((bookRead: any) => {
             return (
               <article
-                className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 mb-4 mt-8 mx-4 pt-4"
+                className="card bg-yellow-100 text-slate-600 w-80 shadow-xl gap-2 mb-4 mt-8 mx-4 pt-4"
                 key={bookRead.id}
               >
                 {bookRead.book.image && (
@@ -87,7 +87,7 @@ export function BookRead() {
                   </figure>
                 )}
                 <section className="card-body">
-                  <h2 className="card-title text-xl text-slate-900">
+                  <h2 className="card-title text-xl text-purple-700">
                     {bookRead.book.name}
                   </h2>
                   <p>{bookRead.book.author}</p>
@@ -95,13 +95,13 @@ export function BookRead() {
                     <div className="flex flex-col">
                       <p>
                         {"Pages "}
-                        <strong className="text-slate-900 text-lg">
+                        <strong className="text-purple-700 text-lg">
                           {bookRead.book.pages}
                         </strong>
                       </p>
                       <p>
                         {"Points "}
-                        <strong className="text-slate-900 text-lg">
+                        <strong className="text-purple-700 text-lg">
                           {bookRead.book.points}
                         </strong>
                       </p>

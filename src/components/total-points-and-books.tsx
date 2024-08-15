@@ -26,16 +26,14 @@ export function TotalPointsAndBooks() {
 
   return (
     <>
-      <div className="gap-4 md:text-3xl font-semibold text-center flex text-xl pt-6 pb-2">
-        <p>
+      <div className="gap-10 md:text-3xl font-semibold text-center flex text-xl pt-6 pb-2 text-slate-600">
+        <p className="flex flex-col shadow-lg py-4 px-8 rounded-xl bg-yellow-200">
+          <span className="text-purple-700 p-2 text-6xl">{totalBooksRead}</span>
           Points
-          <span className="text-purple-700 rounded-full p-2 ">
-            {totalBooksRead}
-          </span>
         </p>
-        <p>
+        <p className="flex flex-col shadow-lg py-4 px-8 rounded-xl bg-yellow-200">
+          <span className="text-purple-700 p-2 text-6xl">{data}</span>
           Books
-          <span className="text-purple-700 rounded-full p-2 ">{data}</span>
         </p>
       </div>
     </>

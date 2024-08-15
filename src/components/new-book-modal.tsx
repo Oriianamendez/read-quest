@@ -1,3 +1,5 @@
+"use client";
+
 import { handleNewBooks } from "@/db/queries";
 import { CTAButton } from "./buttons";
 import { Label } from "./section";

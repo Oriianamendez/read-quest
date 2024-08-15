@@ -25,7 +25,7 @@ export function TotalPointsAndBooks() {
 
   return (
     <>
-      <div className="gap-4 md:text-2xl font-semibold text-center flex text-xl">
+      <div className="gap-4 md:text-3xl font-semibold text-center flex text-xl pt-6 pb-2">
         <p>
           Points
           <span className="text-purple-700 rounded-full p-2 ">

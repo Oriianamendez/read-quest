@@ -1,6 +1,6 @@
 "use client";
 
-import { Checkbox, CTAButton, Main } from "@/components";
+import { Checkbox, CTAButton, Main, TotalPointsAndBooks } from "@/components";
 import { getBookRead } from "@/db/queries";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -64,40 +64,43 @@ export function BookRead() {
   }, []);
 
   return (
-    <main className="flex flex-wrap justify-center gap-4 items-center bg-yellow-100">
-      {booksRead &&
-        booksRead.map((bookRead: any) => {
-          return (
-            <article
-              className="card bg-purple-300 text-slate-600 w-80 h-72 shadow-xl gap-2 mb-4 mt-8 mx-4"
-              key={bookRead.id}
-            >
-              <section className="card-body">
-                <h2 className="card-title text-3xl text-slate-900">
-                  {bookRead.book.name}
-                </h2>
-                <p>{bookRead.book.author}</p>
-                <footer className="card-actions flex justify-between">
-                  <div className="flex flex-col">
-                    <p>
-                      {"Pages "}
-                      <strong className="text-slate-900 text-lg">
-                        {bookRead.book.pages}
-                      </strong>
-                    </p>
-                    <p>
-                      {"Points "}
-                      <strong className="text-slate-900 text-lg">
-                        {bookRead.book.points}
-                      </strong>
-                    </p>
-                  </div>
-                  <Checkbox />
-                </footer>
-              </section>
-            </article>
-          );
-        })}
+    <main className="flex flex-col items-center bg-yellow-100">
+      <TotalPointsAndBooks />
+      <div className="flex flex-wrap justify-center gap-4 items-center">
+        {booksRead &&
+          booksRead.map((bookRead: any) => {
+            return (
+              <article
+                className="card bg-purple-300 text-slate-600 w-80 h-72 shadow-xl gap-2 mb-4 mt-8 mx-4"
+                key={bookRead.id}
+              >
+                <section className="card-body">
+                  <h2 className="card-title text-3xl text-slate-900">
+                    {bookRead.book.name}
+                  </h2>
+                  <p>{bookRead.book.author}</p>
+                  <footer className="card-actions flex justify-between">
+                    <div className="flex flex-col">
+                      <p>
+                        {"Pages "}
+                        <strong className="text-slate-900 text-lg">
+                          {bookRead.book.pages}
+                        </strong>
+                      </p>
+                      <p>
+                        {"Points "}
+                        <strong className="text-slate-900 text-lg">
+                          {bookRead.book.points}
+                        </strong>
+                      </p>
+                    </div>
+                    <Checkbox />
+                  </footer>
+                </section>
+              </article>
+            );
+          })}
+      </div>
     </main>
   );
 }

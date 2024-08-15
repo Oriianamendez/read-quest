@@ -3,7 +3,13 @@ import { Label, CTAButton } from "@/components";
 import { getQuestions } from "@/db/queries";
 import { handleAnswers } from "@/lib/actions";
 
-export function QuestionsForm({ bookId }: { bookId: string }) {
+export function QuestionsForm({
+  bookId,
+  updateBooksRead,
+}: {
+  bookId: string;
+  updateBooksRead: any;
+}) {
   const [questions, setQuestions] = useState<any[]>([]);
   const [questionsSent, setQuestionsSent] = useState(false);
   const [onError, setOnError] = useState(false);
@@ -19,16 +25,15 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
     const form = event.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
 
-    const success = await handleAnswers(formData);
-    if (success) {
+    const result = await handleAnswers(formData);
+    if (result.success) {
       setQuestionsSent(true);
-      setTimeout(
-        () =>
-          (document.getElementById("my_modal_3") as HTMLDialogElement)?.close(),
-        2000
-      );
-    }
-    if (!success) {
+      updateBooksRead(result.booksRead);
+      setTimeout(() => {
+        setQuestionsSent(false);
+        (document.getElementById("my_modal_3") as HTMLDialogElement)?.close();
+      }, 2000);
+    } else {
       setOnError(true);
     }
   };

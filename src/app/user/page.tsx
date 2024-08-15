@@ -6,16 +6,21 @@ import {
   QuestionsModalForm,
   TopNavUser,
 } from "@/components";
-import { getBooks } from "@/db/queries";
+import { getBookRead, getBooks } from "@/db/queries";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const [books, setBooks] = useState<any[]>([]);
+  const [booksRead, setBooksRead] = useState<any>([]);
 
   useEffect(() => {
     getBooks().then((data) => {
       setBooks(data);
+    });
+
+    getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048").then((data) => {
+      setBooksRead(data);
     });
   }, []);
 
@@ -28,7 +33,7 @@ export default function Page() {
             <HeaderForUser />
           </header>
           <main>
-            <QuestionsModalForm books={books} />
+            <QuestionsModalForm books={books} updateBooksRead={setBooksRead} />
           </main>
         </div>
         <Image
@@ -40,7 +45,7 @@ export default function Page() {
           priority
         />
       </div>
-      <BookRead />
+      <BookRead booksRead={booksRead} />
     </div>
   );
 }

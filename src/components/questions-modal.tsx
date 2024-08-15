@@ -1,11 +1,16 @@
 "use client";
 
-import { getBooks } from "@/db/queries";
 import { CTAButton } from "./buttons";
 import { QuestionsForm } from "./questions-form";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export function QuestionsModalForm({ books }: { books: any }) {
+export function QuestionsModalForm({
+  books,
+  updateBooksRead,
+}: {
+  books: any;
+  updateBooksRead: any;
+}) {
   const [bookId, setBookId] = useState<any>(null);
 
   const showQuestions = () => {
@@ -45,7 +50,9 @@ export function QuestionsModalForm({ books }: { books: any }) {
               ✕
             </button>
           </form>
-          {bookId && <QuestionsForm bookId={bookId} />}
+          {bookId && (
+            <QuestionsForm bookId={bookId} updateBooksRead={updateBooksRead} />
+          )}
         </div>
       </dialog>
     </main>

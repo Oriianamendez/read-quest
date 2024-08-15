@@ -1,12 +1,12 @@
 "use server";
 
 import {
+  getBookRead,
   getTotalBooksRead,
   saveAnswers,
   saveBookRead,
   saveNewBooks,
 } from "@/db/queries";
-import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 export const handleAnswers = async (formData: FormData) => {
@@ -16,11 +16,11 @@ export const handleAnswers = async (formData: FormData) => {
       await saveAnswers(answer as string, questionId);
     });
     await saveBookRead(formData.get("book_id_hidden") as string);
-    revalidatePath("/user");
-    return true;
+    const booksRead = await getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048");
+    return { booksRead, success: true };
   } catch (error) {
     new Error("The answers could not be saved");
-    return false;
+    return { success: false };
   }
 };
 

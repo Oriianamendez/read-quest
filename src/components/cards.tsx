@@ -54,15 +54,7 @@ export function BookCards({
   );
 }
 
-export function BookRead() {
-  const [booksRead, setBooksRead] = useState<any>([]);
-
-  useEffect(() => {
-    getBookRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048").then((data) => {
-      setBooksRead(data);
-    });
-  }, []);
-
+export function BookRead({ booksRead }: { booksRead: any }) {
   return (
     <main className="flex flex-col items-center bg-yellow-300">
       <TotalPointsAndBooks />

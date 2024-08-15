@@ -8,7 +8,7 @@ export function CTAButton({
   return (
     <button
       type="submit"
-      className="btn bg-yellow-300 hover:bg-yellow-200 border-yellow-300 font-medium text-lg"
+      className="btn bg-yellow-300 hover:bg-yellow-200 border-yellow-300 font-medium text-lg text-black"
       onClick={onClick}
     >
       {name}

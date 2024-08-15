@@ -20,7 +20,7 @@ export function QuestionsModalForm({
   return (
     <main className="md:flex md:flex-col items-center pt-10">
       <select
-        className="select select-warning w-full max-w-xs"
+        className="select select-warning w-full max-w-xs bg-white text-black"
         onChange={(e) => setBookId(e.currentTarget.value)}
       >
         <option value="Select your book">Select your book</option>

@@ -21,7 +21,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        {children}
+        <footer className="text-center p-4 text-lg bg-yellow-100">
+          <p>
+            This project was created by{" "}
+            <a href="https://oriianamendez.dev/" className="text-purple-700">
+              Oriana Mendez
+            </a>
+            , and it is{" "}
+            <a
+              href="https://github.com/Oriianamendez/read-quest"
+              className="text-purple-700"
+            >
+              open-sourced
+            </a>
+          </p>
+        </footer>
+      </body>
     </html>
   );
 }

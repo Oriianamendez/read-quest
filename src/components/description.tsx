@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export function Description() {
   return (
-    <div className="hero bg-yellow-100 p-10">
+    <div className="hero bg-purple-300 p-10">
       <div className="hero-content flex-col md:flex-row text-black">
         <Image
           width={300}
           height={300}
-          src="/kid.png"
+          src="/boy-bg-purple.png"
           className="rounded-lg pb-8"
           alt="Icon of a kid reading"
           priority

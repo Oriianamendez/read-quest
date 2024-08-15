@@ -42,10 +42,3 @@ export type NewBooks = typeof books.$inferInsert;
 export const saveNewBooks = async (newBook: NewBooks) => {
   return await db.insert(books).values(newBook).returning();
 };
-
-export const getTotalBooksRead = async (kidId: string) => {
-  return await db
-    .select({ value: count() })
-    .from(bookRead)
-    .where(eq(bookRead.kid_id, kidId));
-};

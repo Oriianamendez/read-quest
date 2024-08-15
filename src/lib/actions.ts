@@ -2,7 +2,6 @@
 
 import {
   getBookRead,
-  getTotalBooksRead,
   saveAnswers,
   saveBookRead,
   saveNewBooks,
@@ -52,8 +51,4 @@ export const handleNewBooks = async (formData: FormData) => {
     new Error("The book could not be saved");
     return { success: false };
   }
-};
-
-export const showTotalBooksRead = async () => {
-  return await getTotalBooksRead("35895cdb-96ee-4828-8ef4-7e3ceb5a3048");
 };

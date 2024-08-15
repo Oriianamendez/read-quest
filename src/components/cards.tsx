@@ -57,7 +57,7 @@ export function BookCards({
 export function BookRead({ booksRead }: { booksRead: any }) {
   return (
     <main className="flex flex-col items-center bg-yellow-300">
-      <TotalPointsAndBooks />
+      <TotalPointsAndBooks booksRead={booksRead} />
       <div className="flex flex-wrap justify-center gap-4 items-center">
         {booksRead &&
           booksRead.map((bookRead: any) => {

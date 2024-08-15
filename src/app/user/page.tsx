@@ -6,7 +6,6 @@ import {
   QuestionsModalForm,
   TopNavUser,
 } from "@/components";
-import { Suspense } from "react";
 import Image from "next/image";
 
 export default function Page() {

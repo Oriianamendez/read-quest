@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <div>
       <TopNavUser />
-      <div className="flex justify-evenly pt-20 ">
+      <div className="flex justify-evenly pt-16 pb-4 ">
         <div>
           <header>
             <HeaderForUser />

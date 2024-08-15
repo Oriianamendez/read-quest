@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewBookModal } from "./new-book-modal";
-import { TotalPointsAndBooks } from "./total-points-and-books";
 
 export function TopNav() {
   return (
@@ -34,14 +33,13 @@ export function TopNav() {
 export function TopNavUser() {
   return (
     <header>
-      <nav className="navbar bg-yellow-200 ">
+      <nav className="navbar">
         <div className="flex-1 justify-between">
           <Link href={"/"} className="btn btn-ghost text-xl">
             <Image src="/logo.png" width={45} height={45} alt="Logo" />
           </Link>
-          <TotalPointsAndBooks />
           <div tabIndex={0} role="button" className="flex items-center ">
-            <div className="">
+            <div>
               <NewBookModal />
             </div>
           </div>

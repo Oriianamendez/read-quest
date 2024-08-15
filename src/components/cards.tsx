@@ -64,7 +64,7 @@ export function BookRead() {
   }, []);
 
   return (
-    <main className="flex gap-4 items-center bg-yellow-100">
+    <main className="flex flex-wrap justify-center gap-4 items-center bg-yellow-100">
       {booksRead &&
         booksRead.map((bookRead: any) => {
           return (

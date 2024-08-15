@@ -4,6 +4,8 @@ import { getQuestions, handleAnswers } from "@/db/queries";
 
 export function QuestionsForm({ bookId }: { bookId: string }) {
   const [questions, setQuestions] = useState<any[]>([]);
+  const [questionsSent, setQuestionsSent] = useState(false);
+  const [onError, setOnError] = useState(false);
 
   useEffect(() => {
     getQuestions(bookId).then((data) => {
@@ -18,8 +20,15 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
 
     const success = await handleAnswers(formData);
     if (success) {
-      // Close the modal
-      (document.getElementById("my_modal_3") as HTMLDialogElement)?.close();
+      setQuestionsSent(true);
+      setTimeout(
+        () =>
+          (document.getElementById("my_modal_3") as HTMLDialogElement)?.close(),
+        2000
+      );
+    }
+    if (!success) {
+      setOnError(true);
     }
   };
 
@@ -39,6 +48,20 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
       <footer className="mt-4 flex place-self-end pr-20">
         <CTAButton name={"Send"} />
       </footer>
+      {questionsSent && (
+        <div className="toast toast-bottom">
+          <div className="alert bg-purple-300">
+            <span>Questions sent successfully!</span>
+          </div>
+        </div>
+      )}
+      {onError && (
+        <div className="toast toast-bottom">
+          <div className="alert bg-purple-300">
+            <span>Unfortunately the questions could not be sent</span>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

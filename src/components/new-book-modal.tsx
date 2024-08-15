@@ -1,6 +1,7 @@
 import { handleNewBooks } from "@/db/queries";
 import { CTAButton } from "./buttons";
 import { Label } from "./section";
+import { useState } from "react";
 
 export function NewBookModal() {
   return (
@@ -28,6 +29,9 @@ export function NewBookModal() {
 }
 
 function NewBookForm() {
+  const [bookSent, setBookSent] = useState(false);
+  const [onError, setOnError] = useState(false);
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const form = event.currentTarget as HTMLFormElement;
@@ -35,7 +39,15 @@ function NewBookForm() {
 
     const success = await handleNewBooks(formData);
     if (success) {
-      (document.getElementById("my_modal_4") as HTMLDialogElement)?.close();
+      setBookSent(true);
+      setTimeout(
+        () =>
+          (document.getElementById("my_modal_4") as HTMLDialogElement)?.close(),
+        2000
+      );
+    }
+    if (!success) {
+      setOnError(true);
     }
   };
 
@@ -54,6 +66,20 @@ function NewBookForm() {
       <footer className="mt-4">
         <CTAButton name={"Add new book"} />
       </footer>
+      {bookSent && (
+        <div className="toast">
+          <div className="alert bg-purple-300">
+            <span>Book sent successfully!</span>
+          </div>
+        </div>
+      )}
+      {onError && (
+        <div className="toast">
+          <div className="alert bg-red-300">
+            <span>Unfortunately book not sent.</span>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

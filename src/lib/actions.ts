@@ -2,12 +2,12 @@
 
 import {
   getTotalBooksRead,
-  NewBooks,
   saveAnswers,
   saveBookRead,
   saveNewBooks,
 } from "@/db/queries";
 import { revalidatePath } from "next/cache";
+import { z } from "zod";
 
 export const handleAnswers = async (formData: FormData) => {
   try {
@@ -24,8 +24,19 @@ export const handleAnswers = async (formData: FormData) => {
   }
 };
 
+const AddNewBook = z.object({
+  name: z.string().min(1),
+  author: z.string().min(1),
+  description: z.string().min(1),
+  pages: z.number().min(1),
+  points: z.number().min(1),
+  age: z.number().min(1),
+});
+
+type NewBooksForm = z.infer<typeof AddNewBook>;
+
 export const handleNewBooks = async (formData: FormData) => {
-  const newBook: NewBooks = {
+  const newBook: NewBooksForm = {
     name: formData.get("name") as string,
     author: formData.get("author") as string,
     description: formData.get("description") as string,

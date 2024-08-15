@@ -34,7 +34,7 @@ export function QuestionsForm({ bookId }: { bookId: string }) {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center">
-      <input type="text" hidden name="book_id" defaultValue={bookId} />
+      <input type="text" hidden name="book_id_hidden" value={bookId} readOnly />
       {questions.map((question: any) => {
         return (
           <Label

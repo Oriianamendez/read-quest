@@ -39,10 +39,11 @@ export const saveBookRead = async (bookId: string) => {
 
 export const handleAnswers = async (formData: FormData) => {
   try {
-    formData.forEach((answer, questionId) => {
-      saveAnswers(answer as string, questionId);
+    formData.forEach(async (answer, questionId) => {
+      if (questionId === "book_id_hidden") return;
+      await saveAnswers(answer as string, questionId);
     });
-    await saveBookRead(formData.get("book_id") as string);
+    await saveBookRead(formData.get("book_id_hidden") as string);
     return true;
   } catch (error) {
     new Error("The answers could not be saved");

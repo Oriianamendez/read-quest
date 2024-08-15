@@ -17,6 +17,7 @@ export const books = pgTable("books", {
   points: integer("points").notNull(),
   age: integer("age").notNull(),
   read: boolean("read").notNull().default(false),
+  image: text("image"),
 });
 
 export const bookRead = pgTable("book_read", {

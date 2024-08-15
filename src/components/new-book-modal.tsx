@@ -43,11 +43,10 @@ function NewBookForm({ updateBooks }: { updateBooks: any }) {
     if (result.success) {
       setBookSent(true);
       updateBooks(result.book);
-      setTimeout(
-        () =>
-          (document.getElementById("my_modal_4") as HTMLDialogElement)?.close(),
-        2000
-      );
+      setTimeout(() => {
+        setBookSent(false);
+        (document.getElementById("my_modal_4") as HTMLDialogElement)?.close();
+      }, 2000);
     } else {
       setOnError(true);
     }

@@ -11,12 +11,12 @@ import {
 
 export default function Home() {
   return (
-    <div className="content bg-yellow-100">
+    <div className="content bg-yellow-50">
       <TopNav />
       <Main>
         <Header />
         <Description />
-        <main className="bg-yellow-100 md:flex md:gap-4 md:p-4 md:pt-8 justify-center pt-4 pb-4">
+        <main className="bg-yellow-50 md:flex md:gap-4 md:p-4 md:pt-8 justify-center pt-4 pb-4">
           <BookCards {...charlotteWebBook} />
           <BookCards {...theMagicTreeHouseBook} />
           <BookCards {...theBfgBook} />

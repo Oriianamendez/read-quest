@@ -21,7 +21,7 @@ export function BookCards({
   points: number;
 }) {
   return (
-    <article className="card bg-purple-300 text-slate-600 w-96 shadow-xl pt-5 mb-4">
+    <article className="card bg-yellow-100 text-slate-600 w-96 shadow-xl pt-5 mb-4">
       <figure>
         <Image
           width={130}
@@ -33,18 +33,18 @@ export function BookCards({
         />
       </figure>
       <section className="card-body pt-2 pb-5">
-        <h2 className="card-title text-xl text-slate-900">{name}</h2>
+        <h2 className="card-title text-xl text-purple-700">{name}</h2>
         <p>{author}</p>
         <p className=" text-sm text-justify">{description}</p>
         <footer className="card-actions flex justify-between">
           <div className="flex flex-col">
             <p>
               Pages
-              <strong className="text-slate-900 text-lg"> {pages}</strong>
+              <strong className="text-purple-700 text-lg"> {pages}</strong>
             </p>
             <p>
               Points
-              <strong className="text-slate-900 text-lg"> {points}</strong>
+              <strong className="text-purple-700 text-lg"> {points}</strong>
             </p>
           </div>
           <CTAButton name={"Read"} />
@@ -71,7 +71,7 @@ export function BookRead() {
           booksRead.map((bookRead: any) => {
             return (
               <article
-                className="card bg-yellow-100 text-slate-600 w-80 shadow-xl gap-2 mb-4 mt-8 mx-4 pt-4"
+                className="card bg-yellow-100 text-slate-600 w-80 shadow-xl gap-2 mb-10 mt-8 mx-4 pt-4"
                 key={bookRead.id}
               >
                 {bookRead.book.image && (

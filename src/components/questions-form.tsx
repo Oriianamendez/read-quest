@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Label, CTAButton } from "@/components";
-import { getQuestions, handleAnswers } from "@/db/queries";
+import { getQuestions } from "@/db/queries";
+import { handleAnswers } from "@/lib/actions";
 
 export function QuestionsForm({ bookId }: { bookId: string }) {
   const [questions, setQuestions] = useState<any[]>([]);

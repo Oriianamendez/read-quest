@@ -1,6 +1,7 @@
 "use client";
 
-import { getBookRead, showTotalBooksRead } from "@/db/queries";
+import { getBookRead } from "@/db/queries";
+import { showTotalBooksRead } from "@/lib/actions";
 import { useEffect, useState } from "react";
 
 export function TotalPointsAndBooks() {

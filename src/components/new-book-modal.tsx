@@ -1,6 +1,6 @@
 "use client";
 
-import { handleNewBooks } from "@/db/queries";
+import { handleNewBooks } from "@/lib/actions";
 import { CTAButton } from "./buttons";
 import { Label } from "./section";
 import { useState } from "react";

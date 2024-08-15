@@ -20,7 +20,6 @@ export default function DesignSystemPage() {
   return (
     <div className="contents">
       <TopNav />
-      <TopNavUser />
       <Main>
         <Header />
         <Description />
@@ -35,10 +34,7 @@ export default function DesignSystemPage() {
         </p>
         <CTAButton name={"Get your points"} />
         <DeleteButton />
-        <div className="flex flex-col items-center">
-          <QuestionsModalForm />
-          <BookRead />
-        </div>
+        <div className="flex flex-col items-center"></div>
       </Main>
     </div>
   );

@@ -25,6 +25,7 @@ export function QuestionsModalForm() {
         className="select select-warning w-full max-w-xs"
         onChange={(e) => setBookId(e.currentTarget.value)}
       >
+        <option value="Select your book">Select you book</option>
         {books.map((book: any) => {
           return (
             <option key={book.id} value={book.id}>

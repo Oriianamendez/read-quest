@@ -25,16 +25,16 @@ export default function Page() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white">
       <TopNavUser updateBooks={(book: any) => setBooks([book, ...books])} />
-      <div className="flex justify-evenly pt-16 pb-4 ">
+      <main className="flex justify-evenly pt-16 pb-4">
         <div>
           <header>
             <HeaderForUser />
           </header>
-          <main>
+          <div>
             <QuestionsModalForm books={books} updateBooksRead={setBooksRead} />
-          </main>
+          </div>
         </div>
         <Image
           width={600}
@@ -44,7 +44,7 @@ export default function Page() {
           alt="A boy reading a book"
           priority
         />
-      </div>
+      </main>
       <BookRead booksRead={booksRead} />
     </div>
   );

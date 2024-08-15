@@ -21,7 +21,7 @@ export function BookCards({
   points: number;
 }) {
   return (
-    <article className="card bg-purple-300 text-slate-600 w-96 shadow-xl gap-4 pt-8 mb-4">
+    <article className="card bg-purple-300 text-slate-600 w-96 shadow-xl pt-5 mb-4">
       <figure>
         <Image
           width={130}
@@ -29,13 +29,13 @@ export function BookCards({
           src={image}
           className="rounded-md"
           alt="An image of a book"
-          style={{ width: "130px", height: "180px" }}
+          style={{ width: "200px", height: "250px" }}
         />
       </figure>
-      <section className="card-body">
-        <h2 className="card-title text-3xl text-slate-900">{name}</h2>
+      <section className="card-body pt-2 pb-5">
+        <h2 className="card-title text-xl text-slate-900">{name}</h2>
         <p>{author}</p>
-        <p className="pt-2 pb-2 text-lg text-justify">{description}</p>
+        <p className=" text-sm text-justify">{description}</p>
         <footer className="card-actions flex justify-between">
           <div className="flex flex-col">
             <p>
@@ -71,11 +71,23 @@ export function BookRead() {
           booksRead.map((bookRead: any) => {
             return (
               <article
-                className="card bg-purple-300 text-slate-600 w-80 h-72 shadow-xl gap-2 mb-4 mt-8 mx-4"
+                className="card bg-purple-300 text-slate-600 w-80 shadow-xl gap-2 mb-4 mt-8 mx-4 pt-4"
                 key={bookRead.id}
               >
+                {bookRead.book.image && (
+                  <figure>
+                    <Image
+                      width={130}
+                      height={180}
+                      src={bookRead.book.image}
+                      className="rounded-md"
+                      alt="An image of a book"
+                      style={{ width: "200px", height: "250px" }}
+                    />
+                  </figure>
+                )}
                 <section className="card-body">
-                  <h2 className="card-title text-3xl text-slate-900">
+                  <h2 className="card-title text-xl text-slate-900">
                     {bookRead.book.name}
                   </h2>
                   <p>{bookRead.book.author}</p>

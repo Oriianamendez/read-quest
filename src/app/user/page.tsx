@@ -27,7 +27,7 @@ export default function Page() {
   return (
     <div className="bg-white">
       <TopNavUser updateBooks={(book: any) => setBooks([book, ...books])} />
-      <main className="flex justify-evenly pt-16 pb-4">
+      <main className="flex md:flex-row flex-col items-center justify-evenly pt-16 pb-4">
         <div>
           <header>
             <HeaderForUser />
@@ -40,7 +40,7 @@ export default function Page() {
           width={600}
           height={600}
           src="/boy-reading-book.png"
-          className="rounded-lg pr-24"
+          className="md:rounded-lg md:pr-24 items-center"
           alt="A boy reading a book"
           priority
         />

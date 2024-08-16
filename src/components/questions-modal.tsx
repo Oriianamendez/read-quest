@@ -18,7 +18,7 @@ export function QuestionsModalForm({
   };
 
   return (
-    <main className="md:flex md:flex-col items-center pt-10">
+    <main className="md:flex md:flex-col flex flex-col items-center pt-10">
       <select
         className="select select-warning w-full max-w-xs bg-white text-black"
         onChange={(e) => setBookId(e.currentTarget.value)}
@@ -32,7 +32,7 @@ export function QuestionsModalForm({
           );
         })}
       </select>
-      <div className="mt-4">
+      <div className="md:mt-4 mt-4 mb-8">
         <CTAButton
           name={"Store your book!"}
           onClick={() => {
@@ -40,7 +40,7 @@ export function QuestionsModalForm({
           }}
         />
       </div>
-      <div className="pt-10 text-7xl flex flex-col items-center text-yellow-300">
+      <div className="md:pt-10 md:text-7xl md:flex md:flex-col md:items-center md:text-yellow-300 hidden">
         <p>⇩</p>
       </div>
       <dialog id="my_modal_3" className="modal">

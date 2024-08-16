@@ -31,7 +31,7 @@ export function HeaderForUser() {
     <div className="hero">
       <div className="hero-content flex flex-col lg:flex-row text-black ">
         <div className="p-4 text-center">
-          <h1 className="md:text-7xl text-5xl font-bold">Welcome User!</h1>
+          <h1 className="md:text-7xl text-5xl font-bold">Welcome Ori!</h1>
           <p className="py-6 md:text-xl text-xl font-semibold">
             Track and treasure your reading adventures
           </p>
